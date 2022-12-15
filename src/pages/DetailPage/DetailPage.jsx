@@ -11,7 +11,8 @@ const DetailPage = () => {
   const navigate = useNavigate();
   const param = useParams();
   console.log(param);
-  const list = todos.find((list) => list.id === param.id);
+  const list = todos.find((list) => list.title === param.title);
+  console.log(list);
   return (
     <Home>
       <Header></Header>
@@ -30,9 +31,9 @@ const DetailPage = () => {
             >
               닫기
             </a>
-            <h4>{list.title}</h4>
-            <div>{list.contents}</div>
-            <p>Id: {list.id.slice(0, 8)}</p>
+            <h4>{list?.title}</h4>
+            <div>{list?.contents}</div>
+            <p>Id: {list?.id.slice(0, 8)}</p>
           </Detail>
         </Nav>
       </Section>

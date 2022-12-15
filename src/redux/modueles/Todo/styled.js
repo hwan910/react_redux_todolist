@@ -14,7 +14,6 @@ const Card = styled.div`
   }
   .done {
     text-decoration: line-through;
-    transition: 1s;
   }
   div {
     display: flex;

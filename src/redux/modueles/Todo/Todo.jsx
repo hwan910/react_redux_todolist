@@ -2,16 +2,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { addTodos, deleteTodos } from "../../../todos";
 import { useNavigate } from "react-router-dom";
 import { Card, Botton, View, DelBotton } from "./styled";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Todo = ({ isActive }) => {
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
-  useEffect(() => {
-    console.log("안녕");
-  });
 
   const handleDeleteClick = (event) => {
     dispatch(deleteTodos(event.target.value));
@@ -39,7 +35,7 @@ const Todo = ({ isActive }) => {
                 </Botton>
                 <View
                   onClick={() => {
-                    navigate(`/detail/${list.id}`);
+                    navigate(`/detail/${list.title}`);
                   }}
                 >
                   <h4 className={isActive !== true ? "done" : ""}>

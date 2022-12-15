@@ -13,7 +13,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detail" element={<DetailPage />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
+        <Route path="/detail/:title" element={<DetailPage />} />
 
         <Route path="*" element={<div>404페이지라구 ~!</div>} />
       </Routes>
