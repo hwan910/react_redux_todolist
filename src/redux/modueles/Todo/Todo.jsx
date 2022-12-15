@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { addTodos, deleteTodos } from "../../../todos";
 import { useNavigate } from "react-router-dom";
 import { Card, Botton, View, DelBotton } from "./styled";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const Todo = ({ isActive }) => {
   const todos = useSelector((state) => state.todos);
@@ -16,6 +16,7 @@ const Todo = ({ isActive }) => {
   const handleDeleteClick = (event) => {
     dispatch(deleteTodos(event.target.value));
     console.log(`[${event.target.value}]가 삭제되었습니다.`);
+    navigate("/");
   };
   const handleSwitchClick = (event) => {
     const target = todos.find((element) => element.id === event.target.value);
